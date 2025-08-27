@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Computer Science Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .skill-icon {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .skill-icon:hover {
+            transform: scale(1.2);
+            color: #3B82F6;
+        }
+        .project-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold text-gray-900">Portfolio</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600">Projects</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-600">Experience</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600">Home</a>
+                <a href="#projects" class="block py-2 text-gray-700 hover:text-blue-600">Projects</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-blue-600">Experience</a>
+                <a href="#skills" class="block py-2 text-gray-700 hover:text-blue-600">Skills</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="pt-20 pb-16 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center py-20 fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Pranav Sojan</h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">Final-Year Computer Science & Engineering Student</p>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-lg md:text-xl leading-relaxed text-gray-100">
+                        A passionate and dedicated final-year Computer Science and Engineering student with a strong foundation in software development, problem-solving, and emerging technologies. Eager to apply academic knowledge to real-world projects and gain hands-on experience in a dynamic work environment. Committed to continuous learning, innovation, and contributing effectively to team-based and individual projects across various domains in computer science.
+                    </p>
+                </div>
+                <div class="mt-10">
+                    <a href="#projects" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 mr-4">View Projects</a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition duration-300">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Projects</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Here are some of my notable projects that showcase my skills and experience in software development.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="project-card rounded-xl p-8 hover-lift fade-in">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calendar-alt text-3xl text-blue-600 mr-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Plan Smart</h3>
+                    </div>
+                    <p class="text-gray-600 text-lg mb-4">AI-Powered Event Planning Platform</p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Developed a web-based platform that helps users plan events efficiently with AI-powered recommendations. Connects users with local service providers such as photographers, caterers, and decorators based on location and event preferences. Built using Next.js for the frontend and Supabase as the backend. Key features include responsive UI, vendor accessibility, and intelligent planning assistance.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Supabase</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">AI Integration</span>
+                    </div>
+                </div>
+
+                <div class="project-card rounded-xl p-8 hover-lift fade-in">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-3xl text-purple-600 mr-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Question Paper Analysis System</h3>
+                    </div>
+                    <p class="text-gray-600 text-lg mb-4">AI-Powered Prediction Tool</p>
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Contributed to developing a system where users can upload previous question papers, and the application intelligently analyzes patterns to predict possible questions for upcoming exams. Implemented AI-powered prediction logic for efficient exam preparation. Worked on frontend design of key pages, ensuring user-friendly navigation and responsive UI. This project was developed during a college internship program.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React.js</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">AI Analysis</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Pattern Recognition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Experience</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">My professional experience and internships in software development.</p>
+            </div>
+
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row fade-in">
+                    <div class="md:w-1/4 mb-4 md:mb-0">
+                        <div class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold inline-block">
+                            June 10 – June 27, 2025
+                        </div>
+                    </div>
+                    <div class="md:w-3/4 bg-gray-50 rounded-xl p-8 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-code text-2xl text-blue-600 mr-3"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Frontend Developer Intern</h3>
+                        </div>
+                        <p class="text-lg text-blue-600 font-semibold mb-2">SFO Technologies, Nest Hi-Tech Park, Kalamassery</p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Worked on frontend development using React.js, participated in UI enhancements, and collaborated in real-world development workflows.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row fade-in">
+                    <div class="md:w-1/4 mb-4 md:mb-0">
+                        <div class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold inline-block">
+                            College Internship
+                        </div>
+                    </div>
+                    <div class="md:w-3/4 bg-gray-50 rounded-xl p-8 hover-lift">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-graduation-cap text-2xl text-purple-600 mr-3"></i>
+                            <h3 class="text-2xl font-bold text-gray-900">Internship Project</h3>
+                        </div>
+                        <p class="text-lg text-purple-600 font-semibold mb-2">Question Paper Analysis System</p>
+                        <ul class="text-gray-700 space-y-2">
+                            <li>• Collaborated with a team to design and implement an AI-powered question paper analysis system</li>
+                            <li>• Developed and styled frontend pages focusing on usability and responsive layouts</li>
+                            <li>• Improved accessibility and workflows for uploading and analyzing question papers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Skills</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Technologies and tools I work with to bring ideas to life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl p-6 text-center hover-lift fade-in">
+                    <i class="fab fa-react skill-icon text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Web Development</h3>
+                    <p class="text-gray-600 text-sm">Next.js, React.js, HTML, CSS, Tailwind CSS</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center hover-lift fade-in">
+                    <i class="fas fa-palette skill-icon text-4xl text-pink-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">UI/UX Design</h3>
+                    <p class="text-gray-600 text-sm">Figma</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center hover-lift fade-in">
+                    <i class="fas fa-database skill-icon text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Database</h3>
+                    <p class="text-gray-600 text-sm">Supabase, Firebase</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 text-center hover-lift fade-in">
+                    <i class="fab fa-git-alt skill-icon text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Tools & Platforms</h3>
+                    <p class="text-gray-600 text-sm">Git, GitHub, Vercel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">I'm always open to discussing new opportunities and interesting projects.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="fade-in">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Let's Connect</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-gray-900 font-semibold">Email</p>
+                                    <p class="text-gray-600">pranavsojan025@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-github text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-gray-900 font-semibold">GitHub</p>
+                                    <a href="#" class="text-blue-600 hover:underline">https://github.com/pranavsojan2026</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-linkedin text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-gray-900 font-semibold">LinkedIn</p>
+                                    <a href="#" class="text-blue-600 hover:underline">https://www.linkedin.com/in/pranav-sojan-5bba5827b</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-file-download text-blue-600 text-xl mr-4"></i>
+                                <div>
+                                    <p class="text-gray-900 font-semibold">Resume</p>
+                                    <a href="#" class="text-blue-600 hover:underline">Download PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fade-in">
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Name *</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <span class="error-message text-red-500 text-sm hidden">Please enter your name</span>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <span class="error-message text-red-500 text-sm hidden">Please enter a valid email</span>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message *</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                                <span class="error-message text-red-500 text-sm hidden">Please enter your message</span>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+                                Send Message
+                            </button>
+                            <div id="form-success" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                                Thank you! Your message has been sent successfully.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400">&copy; 2025 Portfolio. All rights reserved.</p>
+                <div class="mt-4 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
